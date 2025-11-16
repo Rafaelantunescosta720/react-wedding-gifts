@@ -1,0 +1,37 @@
+{
+  "name": "react-wedding-gifts",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/next-js": "^2.2.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@fontsource-variable/inter": "^5.0.18",
+    "@fontsource/lora": "^5.0.17",
+    "@hookform/resolvers": "^3.3.4",
+    "dotenv": "^16.4.5",
+    "framer-motion": "^11.1.7",
+    "googleapis": "^135.0.0",
+    "net": "^1.0.2",
+    "next": "14.2.2",
+    "next-qrcode": "^2.5.1",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-hook-form": "^7.51.3",
+    "react-icons": "^5.1.0",
+    "swr": "^2.2.5",
+    "yup": "^1.4.0"
+  },
+  "devDependencies": {
+    "eslint": "^8",
+    "eslint-config-next": "14.2.2"
+  }
+}

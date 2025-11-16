@@ -1,0 +1,32 @@
+.cardsGrid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  column-count: 1;
+  column-gap: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  .cardsGrid {
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .cardsGrid {
+    column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .cardsGrid {
+    column-count: 4;
+  }
+}
+
+@media only screen and (min-width: 2560px) {
+  .cardsGrid {
+    column-count: 5;
+  }
+}
+
