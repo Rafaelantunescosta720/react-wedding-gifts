@@ -52,10 +52,10 @@ export default function Search() {
   return (
     <>
       <Head>
-        <title>W&S | Buscar</title>
+        <title>C&R | Buscar</title>
         <meta
           name="description"
-          content="Gift list for the wedding of Willian and Samara"
+          content="Gift list for the wedding of Rafael and Carolina"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />

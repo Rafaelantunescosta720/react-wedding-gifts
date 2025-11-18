@@ -60,10 +60,10 @@ export default function MyGifts() {
   return (
     <>
       <Head>
-        <title>W&S | Meus Presentes</title>
+        <title>C&R | Meus Presentes</title>
         <meta
           name="description"
-          content="Gift list for the wedding of Willian and Samara"
+          content="Gift list for the wedding of Rafael and Carolina"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
