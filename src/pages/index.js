@@ -49,13 +49,7 @@ export default function Home() {
         <Center flexDir="column">
           <Image src="./logo.svg" alt="Logo" mt="3em" boxSize="12em" />
           <Text mx="0.5em" mt="3em" textAlign="center">
-            O grande dia está chegando, e a gente mal pode esperar para
-            comemorar com vocês! Sabemos que todo mundo gosta de presentear quem
-            ama, então criamos essa lista de presentes para dar uma forcinha.
-            Tem de tudo um pouco, desde itens para a nossa nova casinha até
-            algumas coisinhas que sempre sonhamos ter. Escolham o que quiserem
-            (ou só venham com um abraço mesmo, que também vale!). No fim, o que
-            mais importa é ter vocês com a gente nessa nova aventura!
+            Nosso dia está chegando e, como muitos estavam perguntando, criamos uma lista de presentes para receber alguns mimos e começar nossa vidinha de casados. Fiquem à vontade para nos presentear com o que quiserem ou com o valor que puderem.
           </Text>
         </Center>
         {data && gifts && gifts.length == 0 ? (

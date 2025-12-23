@@ -72,11 +72,7 @@ export default function MyGifts() {
         <Center flexDir="column">
           <Image src="./logo.svg" alt="Logo" mt="3em" boxSize="12em" />
           <Text mx="0.5em" mt="3em" textAlign="center">
-            Olha só que beleza! Esses são os presentes que você escolheu para a
-            gente. Já estamos sonhando com eles! Se quiser fazer alguma
-            alteração ou adicionar mais um mimo, fique à vontade. Cada escolha é
-            uma lembrança especial que levaremos para sempre. Obrigado por fazer
-            parte desse momento!
+            Que alegria ver os presentes escolhidos por você! Cada um deles já faz a gente sorrir e imaginar nossa vida de casados começando. Se quiser trocar algo ou acrescentar mais alguma coisinha, fique à vontade. Tudo aqui foi pensado com carinho, e a sua escolha faz parte dessa história. Bom demais vivermos esse momento com você.
           </Text>
         </Center>
         {data && gifts && gifts.length == 0 ? (

@@ -60,12 +60,7 @@ export default function Pix() {
         <Center flexDir="column">
           <Image src="./logo.svg" alt="Logo" mt="3em" boxSize="12em" />
           <Text mx="0.5em" my="2em" textAlign="center">
-            Quer dar aquele presente especial, mas sem sair de casa? O PIX salva
-            o dia! É só escanear o QR Code ou, se preferir, copiar a chave PIX
-            que está logo ali em baixo. Prometemos usar esse presente com muito
-            carinho (ou para pagar a lua de mel, quem sabe?). Cada contribuição
-            é uma parte do nosso sonho, e somos muito gratos por você fazer
-            parte dele. Obrigado por estar conosco nesse momento tão especial!
+            Quer nos presentear de forma prática, sem sair de casa? O PIX é a solução perfeita! Basta escanear o QR Code ou, se preferir, copiar a chave PIX logo abaixo. Cada contribuição será recebida com muito carinho e ajudará a tornar nossos sonhos realidade, seja naquele item especial da lista ou em algo igualmente importante para essa nova fase (como a lua de mel 😉). Agradecemos de coração por fazer parte deste momento tão especial ao nosso lado.
           </Text>
 
           {payload ? (

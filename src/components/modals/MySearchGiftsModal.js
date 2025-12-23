@@ -91,7 +91,7 @@ const MySearchGiftsModal = ({ isOpen, onClose, setSelectedPage }) => {
             </Stack>
             <Flex mb="1em" mt="2em" justifyContent="flex-end">
               <Button
-                colorScheme="facebook"
+                colorScheme="green"
                 type="submit"
                 isLoading={isSubmitting}
                 leftIcon={<SearchIcon />}

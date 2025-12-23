@@ -3,21 +3,28 @@ import { Button, Center, Flex, Stack, Text } from "@chakra-ui/react";
 import { useQRCode } from "next-qrcode";
 import { useClipboard } from "@chakra-ui/react";
 import { ArrowBackIcon, CheckIcon, CopyIcon } from "@chakra-ui/icons";
+import useSWR from "swr";
 
 const MyPayment = ({ selectedGiftData, setActiveStep }) => {
+  const fetcher = (url) => fetch(url).then((r) => r.json());
   const { SVG } = useQRCode();
+
+  const { data } = useSWR("/api/pix-payload", fetcher, {
+    revalidateOnFocus: false,
+  });
+  const payload = data?.payload;
 
   // valor inicial vindo da env (fallback amigável)
   const initialPix =
     process.env.NEXT_PUBLIC_PIX_KEY || "Chave PIX não configurada";
-  const { onCopy, setValue, hasCopied } = useClipboard(initialPix);
+  const initialCopyValue = payload || initialPix;
+  const { onCopy, setValue, hasCopied } = useClipboard(initialCopyValue);
 
-  // garante que o texto do clipboard reflita a env (útil se o valor mudar em hot-reload)
+  // atualiza value quando payload chega
   useEffect(() => {
-    setValue(initialPix);
-  }, [initialPix, setValue]);
+    if (payload) setValue(payload);
+  }, [payload, setValue]);
 
-  const qrcodeText = process.env.NEXT_PUBLIC_QRCODE_TEXT || initialPix;
   const accountOwner = process.env.NEXT_PUBLIC_ACCOUNT_OWNER || "";
 
   return (
@@ -31,14 +38,18 @@ const MyPayment = ({ selectedGiftData, setActiveStep }) => {
             </Text>
 
             <Center mt="1em">
-              <SVG
-                text={qrcodeText}
-                options={{
-                  margin: 2,
-                  width: 220,
-                  color: { dark: "#000000", light: "#ffffff" },
-                }}
-              />
+              {payload ? (
+                <SVG
+                  text={payload}
+                  options={{
+                    margin: 2,
+                    width: 220,
+                    color: { dark: "#000000", light: "#ffffff" },
+                  }}
+                />
+              ) : (
+                <Text>Gerando QR Code...</Text>
+              )}
             </Center>
 
             <Text
@@ -75,7 +86,7 @@ const MyPayment = ({ selectedGiftData, setActiveStep }) => {
 
       <Flex my="1em">
         <Button
-          colorScheme="facebook"
+          colorScheme="green"
           variant="ghost"
           mr={3}
           ml="auto"
@@ -86,7 +97,7 @@ const MyPayment = ({ selectedGiftData, setActiveStep }) => {
           Voltar
         </Button>
         <Button
-          colorScheme="facebook"
+          colorScheme="green"
           fontSize="sm"
           leftIcon={<CheckIcon />}
           onClick={() => setActiveStep(2)}
