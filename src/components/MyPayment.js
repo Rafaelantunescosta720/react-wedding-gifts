@@ -1,14 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Center, Flex, Stack, Text } from "@chakra-ui/react";
 import { useQRCode } from "next-qrcode";
 import { useClipboard } from "@chakra-ui/react";
 import { ArrowBackIcon, CheckIcon, CopyIcon } from "@chakra-ui/icons";
+import useSWR from "swr";
 
 const MyPayment = ({ selectedGiftData, setActiveStep }) => {
+  const fetcher = (url) => fetch(url).then((r) => r.json());
   const { SVG } = useQRCode();
-  const { onCopy, value, setValue, hasCopied } = useClipboard(
-    process.env.NEXT_PUBLIC_PIX_KEY
-  );
+
+  const { data } = useSWR("/api/pix-payload", fetcher, {
+    revalidateOnFocus: false,
+  });
+  const payload = data?.payload;
+
+  // valor inicial vindo da env (fallback amigável)
+  const initialPix =
+    process.env.NEXT_PUBLIC_PIX_KEY || "Chave PIX não configurada";
+  const initialCopyValue = payload || initialPix;
+  const { onCopy, setValue, hasCopied } = useClipboard(initialCopyValue);
+
+  // atualiza value quando payload chega
+  useEffect(() => {
+    if (payload) setValue(payload);
+  }, [payload, setValue]);
+
+  const accountOwner = process.env.NEXT_PUBLIC_ACCOUNT_OWNER || "";
 
   return (
     <>
@@ -17,31 +34,33 @@ const MyPayment = ({ selectedGiftData, setActiveStep }) => {
           <Stack>
             <Text fontSize="sm">
               Você pode usar o QR Code abaixo para uma transação rápida e
-              prática. Se preferir, também pode copiar a chave Pix que está logo
-              abaixo e usá-la no seu aplicativo de pagamento. Escolha o método
-              que achar mais fácil!
+              prática.
             </Text>
+
             <Center mt="1em">
-              <SVG
-                text={process.env.NEXT_PUBLIC_QRCODE_TEXT}
-                options={{
-                  margin: 2,
-                  width: 220,
-                  color: {
-                    dark: "#000000",
-                    light: "#ffffff",
-                  },
-                }}
-              />
+              {payload ? (
+                <SVG
+                  text={payload}
+                  options={{
+                    margin: 2,
+                    width: 220,
+                    color: { dark: "#000000", light: "#ffffff" },
+                  }}
+                />
+              ) : (
+                <Text>Gerando QR Code...</Text>
+              )}
             </Center>
+
             <Text
               alignSelf="center"
               fontSize="sm"
               fontWeight="600"
               color="facebook.500"
             >
-              {process.env.NEXT_PUBLIC_ACCOUNT_OWNER}
+              {accountOwner}
             </Text>
+
             <Button
               onClick={onCopy}
               variant="ghost"
@@ -52,40 +71,36 @@ const MyPayment = ({ selectedGiftData, setActiveStep }) => {
               w="fit-content"
               alignSelf="center"
               my="0.5em"
+              aria-label="Copiar código PIX"
             >
-              {hasCopied ? "Chave copiada!" : value}
+              {hasCopied ? "Chave copiada!" : "Clique aqui para copiar!"}
             </Button>
           </Stack>
         ) : (
           <Text fontSize="sm">
             Você pode comprar o presente onde preferir e entregá-lo quando for
-            mais conveniente para você. O site é apenas para reservar os
-            presentes e evitar presentes repetidos, então fique à vontade para
-            escolher a loja e o momento que melhor se encaixem na sua rotina.
+            mais conveniente.
           </Text>
         )}
       </Center>
+
       <Flex my="1em">
         <Button
-          colorScheme="facebook"
+          colorScheme="green"
           variant="ghost"
           mr={3}
           ml="auto"
           leftIcon={<ArrowBackIcon />}
           fontSize="sm"
-          onClick={() => {
-            setActiveStep(0);
-          }}
+          onClick={() => setActiveStep(0)}
         >
           Voltar
         </Button>
         <Button
-          colorScheme="facebook"
+          colorScheme="green"
           fontSize="sm"
           leftIcon={<CheckIcon />}
-          onClick={() => {
-            setActiveStep(2);
-          }}
+          onClick={() => setActiveStep(2)}
         >
           Finalizar
         </Button>

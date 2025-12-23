@@ -11,14 +11,11 @@ const MyPresentOptions = ({
   return (
     <>
       <Text fontSize="sm">
-        Você pode escolher um presente da nossa lista e comprá-lo onde achar
-        melhor. Ou, se preferir algo mais prático, também pode nos enviar o presente
-        diretamente via Pix. Fique à vontade para escolher a forma que for mais
-        conveniente para você!
+        Você pode escolher um presente da nossa lista e adquiri-lo no local que preferir. Caso ache mais prático, também é possível contribuir enviando o valor do presente diretamente via Pix. Sinta-se à vontade para escolher a opção que for mais conveniente para você.
       </Text>
       <Flex my="1em">
         <Button
-          colorScheme="facebook"
+          colorScheme="green"
           variant="ghost"
           mr={3}
           ml="auto"
@@ -32,7 +29,7 @@ const MyPresentOptions = ({
           Pix
         </Button>
         <Button
-          colorScheme="facebook"
+          colorScheme="green"
           variant="ghost"
           leftIcon={<FaShoppingCart />}
           fontSize="sm"

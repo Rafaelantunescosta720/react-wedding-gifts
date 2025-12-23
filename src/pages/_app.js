@@ -77,7 +77,7 @@ export default function App({ Component, pageProps }) {
             size="lg"
             w={selectedPage == "home" ? "3em" : "0em"}
             fontSize="1.375em"
-            colorScheme={selectedPage == "home" ? "facebook" : "black"}
+            colorScheme={selectedPage == "home" ? "green" : "black"}
             variant={selectedPage == "home" ? "solid" : "ghost"}
             onClick={() => {
               router.push(
@@ -98,7 +98,7 @@ export default function App({ Component, pageProps }) {
             size="lg"
             w={selectedPage == "pix" ? "3em" : "0em"}
             fontSize="1.375em"
-            colorScheme={selectedPage == "pix" ? "facebook" : "black"}
+            colorScheme={selectedPage == "pix" ? "green" : "black"}
             variant={selectedPage == "pix" ? "solid" : "ghost"}
             onClick={() => {
               router.push(
@@ -119,7 +119,7 @@ export default function App({ Component, pageProps }) {
             size="lg"
             w={selectedPage == "search" ? "3em" : "0em"}
             fontSize="1.375em"
-            colorScheme={selectedPage == "search" ? "facebook" : "black"}
+            colorScheme={selectedPage == "search" ? "green" : "black"}
             variant={selectedPage == "search" ? "solid" : "ghost"}
             onClick={() => {
               onSearchOpen();
@@ -133,7 +133,7 @@ export default function App({ Component, pageProps }) {
             size="lg"
             w={selectedPage == "my-gifts" ? "3em" : "0em"}
             fontSize="1.375em"
-            colorScheme={selectedPage == "my-gifts" ? "facebook" : "black"}
+            colorScheme={selectedPage == "my-gifts" ? "green" : "black"}
             variant={selectedPage == "my-gifts" ? "solid" : "ghost"}
             onClick={() => {
               onOpen();

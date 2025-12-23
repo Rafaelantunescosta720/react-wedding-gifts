@@ -7,7 +7,11 @@ export default async function handler(req, res) {
 
     const sheets = await authenticateGoogleSheets();
 
-    const range = `${process.env.NEXT_PUBLIC_SHEET_PAGE}!C${id}:H${id}`;
+    // use a env var server-only (não NEXT_PUBLIC_) e forneça fallback para debug
+    const sheetPage =
+      process.env.SHEET_PAGE || process.env.NEXT_PUBLIC_SHEET_PAGE || "Página1";
+
+    const range = `${sheetPage}!C${id}:H${id}`;
 
     const response = await sheets.spreadsheets.values.update({
       spreadsheetId: process.env.SHEET_ID,

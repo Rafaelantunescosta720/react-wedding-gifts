@@ -134,11 +134,8 @@ const MyContactInformation = ({
   return (
     <>
       <Text fontSize="sm">
-        Para que possamos identificar e agradecer seu presente, por favor,
-        preencha seu nome e telefone abaixo. Se quiser deixar uma mensagem para
-        nós, ficaremos muito felizes em ler suas palavras!
-        <br /> Não se preocupe! Seus dados serão usados exclusivamente para isso
-        e ficarão seguros conosco.
+        Para que possamos identificar e agradecer seu presente, pedimos que informe seu nome e telefone abaixo. Se desejar, você também pode deixar uma mensagem, será um prazer ler suas palavras.
+        Fique tranquilo(a): seus dados serão utilizados exclusivamente para esse fim e permanecerão seguros conosco.
       </Text>
       <form onSubmit={handleSubmit(onSubmit)}>
         <Stack spacing={4} m="2em 0">
@@ -186,7 +183,7 @@ const MyContactInformation = ({
         </Stack>
         <Flex mb="1em" mt="2em" justifyContent="flex-end">
           <Button
-            colorScheme="facebook"
+            colorScheme="green"
             variant="ghost"
             mr={3}
             leftIcon={<ArrowBackIcon />}
@@ -198,7 +195,7 @@ const MyContactInformation = ({
             Voltar
           </Button>
           <Button
-            colorScheme="facebook"
+            colorScheme="green"
             type="submit"
             isLoading={isSubmitting}
             leftIcon={<GrSend />}

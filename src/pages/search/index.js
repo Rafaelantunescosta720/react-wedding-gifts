@@ -52,10 +52,10 @@ export default function Search() {
   return (
     <>
       <Head>
-        <title>W&S | Buscar</title>
+        <title>C&R | Buscar</title>
         <meta
           name="description"
-          content="Gift list for the wedding of Willian and Samara"
+          content="Gift list for the wedding of Rafael and Carolina"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
@@ -64,10 +64,7 @@ export default function Search() {
         <Center flexDir="column">
           <Image src="./logo.svg" alt="Logo" mt="3em" boxSize="12em" />
           <Text mx="0.5em" mt="3em" textAlign="center">
-            Achou o presente perfeito? Ótimo! Agora é só reservar para garantir
-            que ninguém vai escolher antes de você. Se ainda está em dúvida, não
-            tem problema, a lista está cheia de boas opções! Mas não espere
-            muito, os melhores presentes voam rápido.
+            Gostou de alguma opção? É só reservar para garantir. Se ainda quiser dar mais uma olhadinha, tudo bem, a lista tem várias escolhas. Só não deixa pra depois, porque algumas acabam rapidinho.
           </Text>
         </Center>
         {data && gifts && gifts.length == 0 ? (
@@ -78,9 +75,7 @@ export default function Search() {
               &quot;.
             </Heading>
             <Text textAlign="center">
-              Mas não se preocupe! Se você tiver algo específico em mente, é só
-              falar com a gente e podemos adicionar à lista.
-              <br /> Quem sabe seu presente está a um passo de ser incluído!
+              Não achou exatamente o que estava procurando? Sem problema. Se tiver algo específico em mente, é só falar com a gente que vemos como incluir na lista.
             </Text>
           </Center>
         ) : data ? (
