@@ -79,7 +79,7 @@ export default function Home() {
             </Text>
             <Box className={styles.cardsGrid} alignItems="center">
               {gifts &&
-                gifts.map((gift) => (
+                gifts?.map((gift) => (
                   <MyCard
                     key={gift.id}
                     handleOpenModal={handleOpenModal}

@@ -19,7 +19,7 @@ export default async function handler(req, res) {
     if (rows.length <= 1) return res.status(200).json([]);
 
     const [header, ...giftsData] = rows;
-    const apiGifts = giftsData.map((gift, index) => ({
+    const apiGifts = giftsData?.map((gift, index) => ({
       id: index + 2,
       imageSrc: gift[0],
       title: gift[1],
