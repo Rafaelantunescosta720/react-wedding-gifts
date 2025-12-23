@@ -94,7 +94,7 @@ export default function Search() {
             </Text>
             <Box className={styles.cardsGrid} alignItems="center">
               {data &&
-                gifts.map((gift) => (
+                gifts?.map((gift) => (
                   <MyCard
                     key={gift.id}
                     handleOpenModal={handleOpenModal}
