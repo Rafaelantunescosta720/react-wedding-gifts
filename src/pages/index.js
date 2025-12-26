@@ -49,7 +49,7 @@ export default function Home() {
         <Center flexDir="column">
           <Image src="./logo.svg" alt="Logo" mt="3em" boxSize="12em" />
           <Text mx="0.5em" mt="3em" textAlign="center">
-            Nosso dia está chegando e, como muitos estavam perguntando, criamos uma lista de presentes para receber alguns mimos e começar nossa vidinha de casados. Fiquem à vontade para nos presentear com o que quiserem ou com o valor que puderem.
+            osso dia está chegando e, como muitos estavam perguntando, criamos uma lista de presentes para receber alguns mimos e começar nossa vidinha de casados. A lista é apenas uma referência: os itens não têm valores definidos, para que cada um possa presentear da forma e no valor que achar mais adequado. Fiquem à vontade para escolher o presente que preferirem ou contribuir com o valor que puderem, tudo será recebido com muito carinho.
           </Text>
         </Center>
         {data && gifts && gifts.length == 0 ? (
