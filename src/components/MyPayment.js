@@ -56,7 +56,7 @@ const MyPayment = ({ selectedGiftData, setActiveStep }) => {
               alignSelf="center"
               fontSize="sm"
               fontWeight="600"
-              color="facebook.500"
+              color="green.500"
             >
               {accountOwner}
             </Text>
@@ -65,7 +65,7 @@ const MyPayment = ({ selectedGiftData, setActiveStep }) => {
               onClick={onCopy}
               variant="ghost"
               colorScheme="gray"
-              color="facebook.500"
+              color="green.500"
               rightIcon={<CopyIcon fontSize="1.2em" />}
               fontSize="sm"
               w="fit-content"

@@ -53,7 +53,7 @@ export default function Home() {
           </Text>
         </Center>
         {data && gifts && gifts.length == 0 ? (
-          <Center flexDir="column" gap="0.75em" color="facebook.500" mt="5em">
+          <Center flexDir="column" gap="0.75em" color="green.500" mt="5em">
             <GrDeliver fontSize="3.5em" />
             <Heading fontSize="lg" textAlign="center" mt="1em">
               Ops! Parece que nossos presentes ainda não chegaram ao site.

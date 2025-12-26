@@ -19,7 +19,7 @@ function MyCard({ gift, handleOpenModal, isChosen, allowRemove }) {
         <Heading size="sm">{title}</Heading>
         <Flex w="full" justifyContent="end" alignItems="center">
           <Button
-            colorScheme={allowRemove ? "red" : isChosen ? "gray" : "facebook"}
+            colorScheme={allowRemove ? "red" : isChosen ? "gray" : "green"}
             alignSelf="end"
             fontSize="md"
             isDisabled={allowRemove ? false : isChosen}

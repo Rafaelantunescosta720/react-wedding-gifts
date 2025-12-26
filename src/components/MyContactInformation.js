@@ -142,7 +142,7 @@ const MyContactInformation = ({
           <FormControl isInvalid={errors.name}>
             <InputGroup>
               <InputLeftElement pointerEvents="none">
-                <Icon as={IoPerson} color="facebook.500" />
+                <Icon as={IoPerson} color="green.500" />
               </InputLeftElement>
               <Input
                 fontSize="sm"
@@ -158,7 +158,7 @@ const MyContactInformation = ({
           <FormControl isInvalid={errors.phone}>
             <InputGroup>
               <InputLeftElement pointerEvents="none">
-                <PhoneIcon color="facebook.500" />
+                <PhoneIcon color="green.500" />
               </InputLeftElement>
               <Input
                 type="tel"

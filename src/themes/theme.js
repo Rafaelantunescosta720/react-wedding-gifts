@@ -7,11 +7,6 @@ const theme = extendTheme({
     body: `'Inter Variable', sans-serif`,
   },
   colors: {
-    facebook: {
-      500: "#42567B",
-      600: "#42567B",
-      700: "#42567B",
-    },
     red: {
       500: "#c44e4e",
       600: "#c44e4e",
