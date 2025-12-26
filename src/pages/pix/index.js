@@ -74,7 +74,7 @@ export default function Pix() {
           fontSize="sm"
           fontWeight="600"
           mt="1em"
-          color="facebook.500"
+          color="green.500"
         >
           {process.env.NEXT_PUBLIC_ACCOUNT_OWNER}
         </Text>
@@ -88,7 +88,7 @@ export default function Pix() {
           onClick={onCopy}
           variant="ghost"
           colorScheme="gray"
-          color="facebook.500"
+          color="green.500"
           rightIcon={<CopyIcon fontSize="1.2em" />}
           fontSize="sm"
           w="fit-content"

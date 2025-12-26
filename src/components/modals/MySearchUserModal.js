@@ -75,7 +75,7 @@ const MySearchUserModal = ({ isOpen, onClose, setSelectedPage }) => {
               <FormControl isInvalid={errors.phone}>
                 <InputGroup>
                   <InputLeftElement pointerEvents="none">
-                    <PhoneIcon color="facebook.500" />
+                    <PhoneIcon color="green.500" />
                   </InputLeftElement>
                   <Input
                     type="tel"

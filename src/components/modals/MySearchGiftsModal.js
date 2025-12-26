@@ -75,7 +75,7 @@ const MySearchGiftsModal = ({ isOpen, onClose, setSelectedPage }) => {
               <FormControl isInvalid={errors.name}>
                 <InputGroup>
                   <InputLeftElement pointerEvents="none">
-                    <SearchIcon color="facebook.500" />
+                    <SearchIcon color="green.500" />
                   </InputLeftElement>
                   <Input
                     type="text"
